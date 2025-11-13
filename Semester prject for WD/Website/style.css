@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 :root {
   /* Colors */
   --primary-color: #3498db;
   --secondary-color: #2c3e50;
   --accent-color: #e74c3c;
-  --background-color: #ffffff;
   --text-color: #333333;
   --text-light: #666666;
   --text-white: #ffffff;
@@ -12,24 +13,44 @@
   --warning-color: #f39c12;
   --error-color: #e74c3c;
 
+  /* Background Color */
+  --white-background: #ffffff;
+  --gradient-background: linear-gradient(45deg, #b01a9f 0%, #a92132 100%);
+  --gradient-background-transparent: linear-gradient(45deg, rgba(176, 26, 159, 0.9) 0%, rgba(169, 33, 50, 0.95) 100%);
+
   /* Font Sizes */
-  --font-size-xs: 0.75rem;   /* 12px */
-  --font-size-sm: 0.875rem;  /* 14px */
-  --font-size-base: 1rem;    /* 16px */
-  --font-size-lg: 1.125rem;  /* 18px */
-  --font-size-xl: 1.25rem;   /* 20px */
-  --font-size-2xl: 1.5rem;   /* 24px */
-  --font-size-3xl: 1.875rem; /* 30px */
-  --font-size-4xl: 2.25rem;  /* 36px */
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-lg: 1.125rem;
+  /* 18px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
+  --font-size-3xl: 1.875rem;
+  /* 30px */
+  --font-size-4xl: 2.25rem;
+  /* 36px */
 
   /* Spacing */
-  --spacing-xs: 0.25rem;  /* 4px */
-  --spacing-sm: 0.5rem;   /* 8px */
-  --spacing-md: 1rem;     /* 16px */
-  --spacing-lg: 1.5rem;   /* 24px */
-  --spacing-xl: 2rem;     /* 32px */
-  --spacing-2xl: 3rem;    /* 48px */
-  --spacing-3xl: 4rem;    /* 64px */
+  --spacing-xs: 0.25rem;
+  /* 4px */
+  --spacing-sm: 0.5rem;
+  /* 8px */
+  --spacing-md: 1rem;
+  /* 16px */
+  --spacing-lg: 1.5rem;
+  /* 24px */
+  --spacing-xl: 2rem;
+  /* 32px */
+  --spacing-2xl: 3rem;
+  /* 48px */
+  --spacing-3xl: 4rem;
+  /* 64px */
 
   /* Margins and Padding shortcuts */
   --margin-sm: var(--spacing-sm);
@@ -51,34 +72,170 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   :root {
     /* Mobile-specific font sizes */
-    --font-size-base: 0.875rem; /* 14px */
-    --font-size-lg: 1rem;       /* 16px */
-    --font-size-xl: 1.125rem;   /* 18px */
-    --font-size-2xl: 1.25rem;   /* 20px */
-    --font-size-3xl: 1.5rem;    /* 24px */
-    
+    --font-size-base: 0.875rem;
+    /* 14px */
+    --font-size-lg: 1rem;
+    /* 16px */
+    --font-size-xl: 1.125rem;
+    /* 18px */
+    --font-size-2xl: 1.25rem;
+
+    /* 20px */
+    --font-size-3xl: 1.5rem;
+    /* 24px */
+
     /* Mobile-specific spacing */
-    --spacing-md: 0.75rem;  /* 12px */
-    --spacing-lg: 1rem;     /* 16px */
-    --spacing-xl: 1.5rem;   /* 24px */
+    --spacing-md: 0.75rem;
+    /* 12px */
+    --spacing-lg: 1rem;
+    /* 16px */
+    --spacing-xl: 1.5rem;
+    /* 24px */
+
+    /* Navbar height including padding */
+    --navbar-total-height: calc(80px + 2 * var(--spacing-md));
+
+    /* Default font family (Roboto) */
+    --font-family: 'Roboto', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* Apply default font-family globally */
+  body {
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: auto 0;
+  }
+
+  /* Navbar styles (mobile-first) */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(var(--spacing-md)) var(--spacing-lg);
+    background: var(--background-color);
+    position: relative;
+    z-index: 1000;
+    height: 80px;
+  }
+
+  .nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav__logo-icon svg {
+    display: block;
+  }
+
+  .nav__logo-text {
+    color: #d94b6b;
+    /* warm red/pink like screenshot */
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+  }
+
+  .nav__menu {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    padding: 0.35rem 0.5rem;
+  }
+
+  .nav__link--active {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+
+  .nav__toggle {
+    display: block;
+    /* visible on small screens */
+    border: none;
+    padding: 6px 8px;
+    cursor: pointer;
+    background-color: var(--white-background);
+  }
+
+  .nav__toggle:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive behaviour for small screens */
+  .nav__menu {
+    display: none;
+  }
+
+  /* size Font Awesome icon in the toggle */
+  .nav__toggle .fa-bars {
+    font-size: 45px;
+    background: var(--gradient-background);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: #a92132; /* Fallback pro starší prohlížeče */
+  }
+
+  /* Off-canvas nav drawer (mobile) - full screen width, below navbar */
+  .nav-drawer{ position:fixed; inset:0; pointer-events:none; z-index:999; }
+  .nav-drawer .nav-panel{ position:fixed; right:0; top:var(--navbar-total-height); bottom:0; width:100%; background:var(--gradient-background-transparent); transform:translateX(100%); transition:transform 320ms cubic-bezier(.2,.9,.3,1); box-shadow: -8px 0 24px rgba(0,0,0,0.12);pointer-events:auto; overflow-y:auto; }
+  .nav-drawer .nav-panel__search{ display:flex; gap:0.5rem; margin:2rem 0 1rem; }
+  .nav-drawer .nav-panel__search input{ flex:1; padding:0.75rem 1rem; border:1px solid var(--border-color); border-radius:8px; font-size:var(--font-size-base); }
+  .nav-drawer .nav-panel__search-btn{ background:transparent; border:0; padding:0.75rem; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; }
+  .nav-drawer .nav-panel__nav ul{ list-style:none; padding:0; margin:1rem 0; display:flex; flex-direction:column; gap:0.5rem; }
+  .nav-drawer .nav-panel__nav a{ display:block; padding:1rem 0.75rem; text-decoration:none; color:var(--text-color); border-radius:8px; font-size:var(--font-size-lg); }
+  .nav-drawer .nav-panel__nav a:hover{ background:rgba(0,0,0,0.03); }
+
+  /* Active/open state */
+  .nav-drawer.open{ pointer-events:auto; }
+  .nav-drawer.open .nav-panel{ transform:translateX(0); }
+
+  .header{
+    background-color: var(--accent-color);
+  }
+}
+
+/* prevent body scroll when open */
+.no-scroll{ overflow:hidden; }
+
+/* Tablet and Desktop */
+@media (min-width: 769px) {
+
+  /* On larger screens show menu */
+  .nav__menu {
+    display: flex;
+  }
+
+  .nav__toggle {
+    display: none;
   }
 }
 
 /* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) { 
+@media (min-width: 769px) and (max-width: 1024px) {
   :root {
     /* Tablet-specific adjustments if needed */
-    --spacing-xl: 2.5rem;   /* 40px */
+    --spacing-xl: 2.5rem;
+    /* 40px */
   }
 }
 
 /* Desktop */
-@media (min-width: 1025px) { 
+@media (min-width: 1025px) {
   :root {
     /* Desktop-specific adjustments if needed */
-    --spacing-3xl: 5rem;    /* 80px */
+    --spacing-3xl: 5rem;
+    /* 80px */
   }
 }
