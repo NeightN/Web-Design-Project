@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktický lékař</title>
+    <link rel="icon" type="image/x-icon" href="./assets/icons/doctor_16.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+    <script src="script.js" defer></script>
+</head>
+<!--  -->
+<body>
+    <nav class="nav" role="navigation">
+        <a href="#domu" class="nav__logo" aria-label="Praktický lékař - úvodní stránka">
+            <img src="./assets/images/doctor_64.png" alt="Logo lékaře" class="nav__logo-icon" width="48" height="48">
+            <span class="nav__logo-text">Praktický lékař</span>
+        </a>
+        <ul class="nav__menu">
+            <li class="nav__item"><a class="nav__link nav__link--active" href="#domu">O nás</a></li>
+            <li class="nav__item"><a class="nav__link" href="#sluzby">Služby</a></li>
+            <li class="nav__item"><a class="nav__link" href="#lekari">Lékaři</a></li>
+            <li class="nav__item"><a class="nav__link" href="#kontakty">Kontakty</a></li>
+            <li class="nav__item"><a class="nav__link" href="#cenik">Ceník</a></li>
+            <li class="nav__item"><a class="nav__link" href="#registrace">Registrace</a></li>
+        </ul>
+        <div class="nav__search">
+            <input type="search" placeholder="Vyhledávání" class="nav__search-input" aria-label="Vyhledávání">
+            <button type="button" class="nav__search-btn" aria-label="Vyhledat">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </div>
+        <button class="nav__toggle" aria-label="Otevřít menu" aria-expanded="false">
+            <i class="fa fa-bars nav__toggle-icon"></i>
+        </button>
+    </nav>
+    <!-- Off-canvas navigation drawer (mobile) -->
+    <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+        <aside class="nav-panel" role="dialog" aria-label="Hlavní menu">
+
+            <nav class="nav-panel__nav" aria-label="Hlavní odkazy">
+                <ul class="nav-panel__list">
+                    <li class="nav-panel__item"><a class="nav-panel__link nav-panel__link--active" href="#domu">O
+                            nás</a></li>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="#sluzby">Služby</a></li>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="#lekari">Lékaři</a></li>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="#kontakty">Kontakty</a></li>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="#cenik">Ceník</a></li>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="#registrace">Registrace</a></li>
+                </ul>
+            </nav>
+
+            <form class="nav-panel__search" role="search">
+                <input type="search" name="q" placeholder="Hledat..." aria-label="Hledat" />
+                <button type="button" class="nav-panel__search-btn" aria-label="Vyhledat">
+                    <!-- magnifier SVG -->
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true">
+                        <path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm8.707 15.293-4.387-4.386" stroke="#333"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </form>
+        </aside>
+    </div>
+    <header class="header" role="banner">
+        <div class="header__content">
+            <h1 class="header__title">Chcete se u nás nechat vyšetřit?</h1>
+            <p class="header__subtitle">Jsme tu pro vás, ať už řešíte akutní potíže nebo chcete přijít na pravidelnou
+                preventivní kontrolu. Objednání je snadné a rychlé – stačí pár kliknutí a postaráme se o vás.</p>
+            <a href="#registrace" class="header__cta">Registrovat se</a>
+        </div>
+    </header>
+    <main class="main" role="main">
+        <!-- O nás -->
+        <section class="section section--about">
+            <div class="section__container">
+                <h1 class="section__title">O nás</h1>
+                <p class="section__content">Naše ordinace spojuje osobní přístup s moderní medicínou. Díky online
+                    službám,
+                    efektivní komunikaci a aktuálním postupům poskytujeme péči, na kterou se můžete spolehnout. Zdraví
+                    je
+                    pro
+                    nás i pro vás prioritou.</p>
+            </div>
+        </section>
+        <!-- Nejvyužívanější služby -->
+        <section class="section">
+            <div class="section__container">
+                <h2 class="section__title">Naše služby</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fa fa-stethoscope service-card__icon" aria-hidden="true"></i>
+                        <h2 class="service-card__title">Akutní vyšetření</h2>
+                        <p class="service-card__description">Rychlá péče při náhlých potížích</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa fa-heartbeat service-card__icon" aria-hidden="true"></i>
+                        <h2 class="service-card__title">Diagnostika</h2>
+                        <p class="service-card__description">Moderní vyšetřovací metody</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa fa-flask service-card__icon" aria-hidden="true"></i>
+                        <h2 class="service-card__title">Laboratorní testy</h2>
+                        <p class="service-card__description">Rychlé a přesné výsledky</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa fa-syringe service-card__icon" aria-hidden="true"></i>
+                        <h2 class="service-card__title">Očkování</h2>
+                        <p class="service-card__description">Preventivní i cestovní vakcíny</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa fa-heart service-card__icon" aria-hidden="true"></i>
+                        <h2 class="service-card__title">Preventivní prohlídky</h2>
+                        <p class="service-card__description">Prevence je základ zdraví</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa fa-file-text service-card__icon" aria-hidden="true"></i>
+                        <h2 class="service-card__title">Zdravotní zprávy</h2>
+                        <p class="service-card__description">Posudky a dokumentace</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa fa-share-square service-card__icon" aria-hidden="true"></i>
+                        <h2 class="service-card__title">Převod k specialistům</h2>
+                        <p class="service-card__description">Doporučení a převod k odborníkům</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa fa-laptop service-card__icon" aria-hidden="true"></i>
+                        <h2 class="service-card__title">Online konzultace</h2>
+                        <p class="service-card__description">Poradna z pohodlí domova</p>
+                    </div>
+                </div>
+        </section>
+        <!-- Náš tým -->
+        <section class="section">
+            <div class="section__container">
+                <h1 class="section__title">Náš tým</h1>
+                <div class="team-grid">
+                    <div class="doctor-card">
+                        <div class="doctor-card__photo">
+                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="doctor-card__name">MUDr. Jan Pospíšil</h2>
+                        <p class="doctor-card__specialty">Praktický lékař</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-card__photo">
+                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="doctor-card__name">MUDr. Petra Svobodová</h2>
+                        <p class="doctor-card__specialty">Praktická lékařka</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-card__photo">
+                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="doctor-card__name">Bc. Tomáš Dvořák</h2>
+                        <p class="doctor-card__specialty">Všeobecná sestra</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-card__photo">
+                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="doctor-card__name">Bc. Anna Nováková</h2>
+                        <p class="doctor-card__specialty">Dětská sestra</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-card__photo">
+                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="doctor-card__name">Bc. Pavel Černý</h2>
+                        <p class="doctor-card__specialty">Ordinační sestra</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-card__photo">
+                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="doctor-card__name">Bc. Marie Horáková</h2>
+                        <p class="doctor-card__specialty">Zdravotní sestra</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-card__photo">
+                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="doctor-card__name">Bc. Jiří Veselý</h2>
+                        <p class="doctor-card__specialty">Laboratořní technik</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-card__photo">
+                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="doctor-card__name">Eva Krásná</h2>
+                        <p class="doctor-card__specialty">Recepční</p>
+                    </div>
+                </div>
+        </section>
+        <!-- Kde nás najdete? -->
+        <section class="section">
+            <div class="section__container">
+                <h1 class="section__title">Kde nás najdete?</h1>
+                <div class="map-container">
+                    <iframe class="map-container__iframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.0!2d14.4219!3d50.0755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94e64d03b22f%3A0x8c5e1a8c7e8e8e8e!2sN%C3%A1rodn%C3%AD%20t%C5%99%C3%ADda%2032%2C%20110%2000%20Nov%C3%A9%20M%C4%9Bsto%2C%20Czechia!5e0!3m2!1sen!2scz!4v1700000000001!5m2!1sen!2scz"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        <!-- Ordinační hodiny -->
+        <section class="section">
+            <div class="section__container">
+                <h1 class="section__title">Ordinační hodiny</h1>
+
+                <div class="hours">
+                    <table class="hours__table" aria-describedby="aktualni-caption">
+                        <caption class="hours__table-caption" id="aktualni-caption">Aktuální (chodící pacienti)
+                        </caption>
+                        <thead>
+                            <tr class="hours__table-row">
+                                <th class="hours__table-header">Den</th>
+                                <th class="hours__table-header">Od</th>
+                                <th class="hours__table-header">Do</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Pondělí</td>
+                                <td class="hours__table-cell">08:00</td>
+                                <td class="hours__table-cell">11:30</td>
+                            </tr>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Úterý</td>
+                                <td class="hours__table-cell">08:00</td>
+                                <td class="hours__table-cell">11:30</td>
+                            </tr>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Středa</td>
+                                <td class="hours__table-cell">08:00</td>
+                                <td class="hours__table-cell">11:30</td>
+                            </tr>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Čtvrtek</td>
+                                <td class="hours__table-cell">08:00</td>
+                                <td class="hours__table-cell">11:30</td>
+                            </tr>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Pátek</td>
+                                <td class="hours__table-cell">08:00</td>
+                                <td class="hours__table-cell">11:30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="hours__table" aria-describedby="objednani-caption">
+                        <caption class="hours__table-caption" id="objednani-caption">Objednaní</caption>
+                        <thead>
+                            <tr class="hours__table-row">
+                                <th class="hours__table-header">Den</th>
+                                <th class="hours__table-header">Od</th>
+                                <th class="hours__table-header">Do</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Pondělí</td>
+                                <td class="hours__table-cell">12:30</td>
+                                <td class="hours__table-cell">16:00</td>
+                            </tr>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Úterý</td>
+                                <td class="hours__table-cell">12:30</td>
+                                <td class="hours__table-cell">16:00</td>
+                            </tr>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Středa</td>
+                                <td class="hours__table-cell">12:30</td>
+                                <td class="hours__table-cell">16:00</td>
+                            </tr>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Čtvrtek</td>
+                                <td class="hours__table-cell">12:30</td>
+                                <td class="hours__table-cell">16:00</td>
+                            </tr>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Pátek</td>
+                                <td class="hours__table-cell">12:30</td>
+                                <td class="hours__table-cell">16:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="hours__table" aria-describedby="pauza-caption">
+                        <caption class="hours__table-caption" id="pauza-caption">Pauza</caption>
+                        <thead>
+                            <tr class="hours__table-row">
+                                <th class="hours__table-header">Den</th>
+                                <th class="hours__table-header">Od</th>
+                                <th class="hours__table-header">Do</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hours__table-row">
+                                <td class="hours__table-cell">Každý den</td>
+                                <td class="hours__table-cell">12:00</td>
+                                <td class="hours__table-cell">12:30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__col">
+                <span class="footer__title">O nás</span>
+                <ul class="footer__list">
+                    <li><a class="footer__link" href="#onas">O nás</a></li>
+                    <li><a class="footer__link" href="#sluzby">Služby</a></li>
+                    <li><a class="footer__link" href="#lekari">Lékaři</a></li>
+                    <li><a class="footer__link" href="#kontakty">Kontakty</a></li>
+                    <li><a class="footer__link" href="#cenik">Ceník</a></li>
+                    <li><a class="footer__link" href="#kariera">Kariéra</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <span class="footer__title">Pro pacienty</span>
+                <ul class="footer__list">
+                    <li><a class="footer__link" href="#prakticke-informace">Praktické informace</a></li>
+                    <li><a class="footer__link" href="#novinky">Novinky</a></li>
+                    <li><a class="footer__link" href="#pokyny">Pokyny k návštěvě</a></li>
+                    <li><a class="footer__link" href="#formular">Formuláře ke stažení</a></li>
+                    <li><a class="footer__link" href="#faq">Časté dotazy (FAQ)</a></li>
+                    <li><a class="footer__link" href="#pojisteni">Informace o pojištění</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <span class="footer__title">Adresa</span>
+                <address class="footer__address">
+                    Praktický lékař<br>
+                    Ulice 123<br>
+                    110 00 Praha<br>
+                    IČ: 00001234<br>
+                    DIČ: CZ00001234
+                </address>
+            </div>
+
+            <div class="footer__col">
+                <span class="footer__title">Rychlý kontakt</span>
+                <p><a class="footer__contact-link" href="tel:+420123456789">+420 123 456 789</a></p>
+                <p><a class="footer__contact-link" href="mailto:info@example.cz">info@example.cz</a></p>
+                <p>Datová schránka: abcd123</p>
+            </div>
+
+            <div class="footer__col">
+                <span class="footer__title">Sledujte nás</span>
+                <p class="footer__social">
+                    <a href="#" class="social__link" aria-label="Facebook">
+                        <i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social__link" aria-label="Instagram">
+                        <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social__link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-square-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social__link" aria-label="X (bývalý Twitter)">
+                        <i class="fa-brands fa-square-x-twitter" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2025 Němec N., Cuzor V., Procházka P., Legutko P.</p>
+            <p class="footer__disclaimer">Studentský projekt pro předmět Web design</p>
+        </div>
+    </footer>
+
+    <!-- Registration Popup Modal -->
+    <div id="registrationModal" class="modal" aria-hidden="true">
+        <div class="modal__backdrop"></div>
+        <div class="modal__content" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+            <div class="modal__header">
+                <h2 id="modal-title" class="modal__title">Registrace k lékaři</h2>
+                <button class="modal__close" aria-label="Zavřít formulář">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <form class="registration-form" id="registrationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">Jméno *</label>
+                        <input type="text" id="firstName" name="firstName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="form-label">Příjmení *</label>
+                        <input type="text" id="lastName" name="lastName" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="form-label">Datum a čas návštěvy</label>
+                    <div class="appointment-selector">
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button type="button" class="calendar-nav" id="prevMonth" aria-label="Předchozí měsíc">
+                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                                <h3 class="calendar-title" id="calendarTitle"></h3>
+                                <button type="button" class="calendar-nav" id="nextMonth" aria-label="Další měsíc">
+                                    <i class="fa fa-chevron-right" aria-label="true"></i>
+                                </button>
+                            </div>
+                            <div class="calendar-grid" id="calendarGrid">
+                                <div class="calendar-weekdays">
+                                    <div class="calendar-weekdays__day">Po</div>
+                                    <div class="calendar-weekdays__day">Út</div>
+                                    <div class="calendar-weekdays__day">St</div>
+                                    <div class="calendar-weekdays__day">Čt</div>
+                                    <div class="calendar-weekdays__day">Pá</div>
+                                    <div class="calendar-weekdays__day">So</div>
+                                    <div class="calendar-weekdays__day">Ne</div>
+                                </div>
+                                <div class="calendar-days" id="calendarDays"></div>
+                            </div>
+                        </div>
+                        <div class="time-slots" id="timeSlots" style="display: none;">
+                            <h4 class="time-slots__title">Dostupné časy</h4>
+                            <div class="time-slots__grid" id="timeSlotsGrid"></div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="selectedDateTime" name="selectedDateTime">
+                </div>
+                <div class="form-group form-group--full">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="gdprConsent" name="gdprConsent" class="checkbox-input">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">Souhlasím se zpracováním osobních údajů pro účely objednání k lékaři *</span>
+                    </label>
+                    <div id="checkboxError" class="checkbox-error">Souhlas se zpracováním osobních údajů je povinný</div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn--secondary" id="cancelRegistration">Zrušit</button>
+                    <button type="submit" class="btn btn--primary">Dokončit registraci</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</html>
