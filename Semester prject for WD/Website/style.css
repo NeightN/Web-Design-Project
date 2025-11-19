@@ -91,8 +91,11 @@ body {
   font-size: var(--body-font-size);
   line-height: 1.6;
   color: var(--text-color);
-  margin: auto 0;
+  margin: 0;
+  min-height: 100vh;
 }
+
+/* Remove grid layout selector for pages without header - not needed in mobile */
 
 h1,
 h2,
@@ -430,23 +433,67 @@ p {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   }
 
-  /* Main */
+  /* Main - Block Layout for Mobile */
+  .main {
+    /* No grid layout for mobile */
+  }
 
-  /* Services Grid (responsive) */
-  .services-grid {
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  /* Search Results Components */
+  .search-results__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
     margin-top: var(--margin-lg);
+  }
+
+  .search-filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+    margin: var(--margin-lg) 0;
+  }
+
+  .popular-searches__links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-sm);
+    margin-top: var(--margin-md);
+  }
+
+  .breadcrumb {
+    padding: var(--spacing-md) 0;
+    background-color: var(--background-light);
+  }
+
+  /* Services Grid - Flexbox for Mobile */
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--margin-lg);
+  }
+  
+  .service-card {
+    flex: 1 1 calc(50% - var(--spacing-md)/2);
+    min-width: 140px;
   }
 
   .service-card {
     background: var(--white-background);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    padding: var(--padding-lg);
+    padding: var(--padding-md);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .service-card:hover {
@@ -455,15 +502,20 @@ p {
   }
 
   .service-card__icon {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     color: var(--pink-background);
-    margin-bottom: var(--margin-md);
+    margin-bottom: var(--margin-sm);
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 
   .service-card__title {
     font-weight: 500;
     margin-bottom: var(--margin-sm);
     color: var(--text-color);
+    font-size: var(--font-size-sm);
+    line-height: 1.3;
   }
 
   .service-card__description {
@@ -472,21 +524,31 @@ p {
     margin: 0;
   }
 
-  /* Team Grid (responsive) */
+  /* Team Grid - Flexbox for Mobile */
   .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-md);
     margin-top: var(--margin-lg);
+  }
+  
+  .doctor-card {
+    flex: 1 1 calc(50% - var(--spacing-md)/2);
+    min-width: 140px;
   }
 
   .doctor-card {
     background: var(--white-background);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    padding: var(--padding-lg);
+    padding: var(--padding-md);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .doctor-card:hover {
@@ -495,18 +557,18 @@ p {
   }
 
   .doctor-card__photo {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: var(--gradient-background);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto var(--margin-md);
+    margin: 0 auto var(--margin-sm);
   }
 
   .doctor-card__icon {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-lg);
     color: var(--text-white);
   }
 
@@ -514,6 +576,8 @@ p {
     font-weight: 500;
     margin-bottom: var(--margin-sm);
     color: var(--text-color);
+    font-size: var(--font-size-sm);
+    line-height: 1.3;
   }
 
   .doctor-card__specialty {
@@ -572,23 +636,54 @@ p {
     border: 0;
   }
 
-  /* Schedule Tables */
+  /* Schedule Tables - Flexbox for Mobile */
   .hours {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: var(--margin-lg);
     margin-top: var(--margin-lg);
-    flex-wrap: wrap;
   }
 
   .hours__table {
-    flex: 1;
-    min-width: 250px;
+    min-width: auto;
     border-collapse: collapse;
     background: white;
     border-radius: var(--border-radius-md);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+  }
+
+  /* Search Results Components - Flexbox for Mobile */
+  .search-results__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--margin-lg);
+  }
+
+  .search-filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin: var(--margin-lg) 0;
+  }
+
+  .popular-searches__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--margin-md);
+  }
+  
+  .popular-searches__links a {
+    flex: 1 1 calc(50% - var(--spacing-sm)/2);
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .breadcrumb {
+    padding: var(--spacing-md) 0;
+    background-color: var(--background-light);
   }
 
   .hours__table-caption {
@@ -871,12 +966,13 @@ p {
 
   .search-filter--active {
     background: var(--accent-color);
-    color: white;
+    color: var(--text-white); 
     border-color: var(--accent-color);
   }
 
   .search-filter--active:hover {
     background: var(--accent-dark);
+    color: var(--text-color);
     border-color: var(--accent-dark);
   }
 
@@ -978,6 +1074,28 @@ p {
     /* 40px */
   }
 
+  /* Grid Layout for Tablet */
+  body {
+    display: grid;
+    grid-template-areas: 
+      "nav"
+      "header"
+      "main"
+      "footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+
+  /* Grid Layout for pages without header (like results.html) */
+  body:not(:has(.header)) {
+    grid-template-areas: 
+      "nav"
+      "main"
+      "footer";
+    grid-template-rows: auto 1fr auto;
+  }
+
   /* Tablet uses mobile-style navigation */
   .nav {
     display: flex;
@@ -1049,6 +1167,49 @@ p {
   /* Tablet Team Grid (4 columns) */
   .team-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Main layout with grid areas */
+  .main {
+    grid-area: main;
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  /* Hours layout for tablet - 3 columns */
+  .hours {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--margin-lg);
+    margin-top: var(--margin-lg);
+  }
+
+  /* Search Results - Tablet Layout */
+  .search-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-sm);
+    margin: var(--margin-lg) 0;
+  }
+
+  .search-results__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--margin-lg);
+  }
+
+  .popular-searches__links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--margin-md);
   }
 
   /* Tablet Navigation Drawer - same as mobile */
@@ -1346,6 +1507,10 @@ p {
   }
 
   /* Section About */
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+
   .section--about {
     background: #F2F2F2;
     padding: 50px 0;
@@ -1682,12 +1847,13 @@ p {
 
   .search-filter--active {
     background: var(--accent-color);
-    color: white;
+    color: var(--text-white); 
     border-color: var(--accent-color);
   }
 
   .search-filter--active:hover {
     background: var(--accent-dark);
+    color: var(--text-color);
     border-color: var(--accent-dark);
   }
 
@@ -1784,8 +1950,31 @@ p {
     /* 48px */
   }
 
+  /* Grid Layout for Desktop */
+  body {
+    display: grid;
+    grid-template-areas: 
+      "nav nav nav"
+      "header header header"
+      "main main main"
+      "footer footer footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+
+  /* Grid Layout for pages without header (like results.html) */
+  body:not(:has(.header)) {
+    grid-template-areas: 
+      "nav nav nav"
+      "main main main"
+      "footer footer footer";
+    grid-template-rows: auto 1fr auto;
+  }
+
   /* Desktop navbar styles */
   .nav {
+    grid-area: nav;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1918,6 +2107,7 @@ p {
 
   /* Header */
   .header {
+    grid-area: header;
     background-image: url('assets/images/img_1.jpg');
     background-size: cover;
     background-position: center center;
@@ -2109,6 +2299,10 @@ p {
   }
 
   /* Section About */
+  .section {
+    padding-bottom: var(--spacing-2xl);
+  }
+
   .section--about {
     background: #F2F2F2;
     padding: 60px 0;
@@ -2160,16 +2354,39 @@ p {
 
   /* Schedule Tables */
   .hours {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--margin-lg);
     margin-top: var(--margin-2xl);
-    flex-wrap: wrap;
-    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Search Results - Desktop Layout */
+  .search-filters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin: var(--margin-xl) 0;
+  }
+
+  .search-results__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin-top: var(--margin-xl);
+  }
+
+  .popular-searches__links {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--margin-lg);
   }
 
   .hours__table {
-    flex: 1;
+    min-width: auto;
     min-width: 280px;
     max-width: 400px;
     border-collapse: collapse;
@@ -2177,6 +2394,11 @@ p {
     border-radius: var(--border-radius-md);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+  }
+
+  /* Main layout */
+  .main {
+    grid-area: main;
   }
 
   .hours__table-caption {
@@ -2460,12 +2682,13 @@ p {
 
   .search-filter--active {
     background: var(--accent-color);
-    color: white;
+    color: var(--text-white); 
     border-color: var(--accent-color);
   }
 
   .search-filter--active:hover {
     background: var(--accent-dark);
+    color: var(--text-color);
     border-color: var(--accent-dark);
   }
 
