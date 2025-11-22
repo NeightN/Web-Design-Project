@@ -173,7 +173,7 @@ p {
     position: relative;
     z-index: 1000;
     height: 80px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .nav__logo {
@@ -450,6 +450,23 @@ p {
     margin-top: var(--margin-lg);
   }
 
+  /* Empty state styling */
+  .empty-state {
+    padding: var(--spacing-xl);
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    border: 1px solid #e9ecef;
+    margin: var(--spacing-lg) 0;
+  }
+
+  .empty-state__message {
+    color: #6c757d;
+    font-size: 1rem;
+    margin: 0;
+    font-style: italic;
+  }
+
   .search-filters {
     display: grid;
     grid-template-columns: 1fr;
@@ -462,11 +479,6 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: var(--spacing-sm);
     margin-top: var(--margin-md);
-  }
-
-  .breadcrumb {
-    padding: var(--spacing-md) 0;
-    background-color: var(--background-light);
   }
 
   /* Services Grid - Flexbox for Mobile */
@@ -979,13 +991,17 @@ p {
   .search-results__list {
     max-width: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
   }
 
   .search-result {
+    display: block;
+    width: 100%;
     padding: var(--padding-md);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    margin-bottom: var(--margin-sm);
     transition: box-shadow 0.3s ease;
   }
 
@@ -1018,7 +1034,6 @@ p {
   }
 
   .search-form-section {
-    background: var(--background-light);
     padding: var(--padding-lg) 0;
   }
 
@@ -1106,7 +1121,7 @@ p {
     position: relative;
     z-index: 1000;
     height: 80px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .nav__logo {
@@ -1203,6 +1218,13 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-lg);
     margin-top: var(--margin-lg);
+  }
+
+  /* Empty state for tablet */
+  .empty-state {
+    padding: var(--spacing-xl);
+    text-align: center;
+    grid-column: 1 / -1; /* Span all columns */
   }
 
   .popular-searches__links {
@@ -1860,13 +1882,17 @@ p {
   .search-results__list {
     max-width: 700px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
   }
 
   .search-result {
+    display: block;
+    width: 100%;
     padding: var(--padding-lg);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    margin-bottom: var(--margin-md);
     transition: box-shadow 0.3s ease;
   }
 
@@ -1898,7 +1924,6 @@ p {
   }
 
   .search-form-section {
-    background: var(--background-light);
     padding: var(--padding-xl) 0;
   }
 
@@ -1983,7 +2008,7 @@ p {
     position: relative;
     z-index: 1000;
     height: 80px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .nav__logo {
@@ -2378,6 +2403,13 @@ p {
     margin-top: var(--margin-xl);
   }
 
+  /* Empty state for desktop */
+  .empty-state {
+    padding: var(--spacing-xxl);
+    text-align: center;
+    grid-column: 1 / -1; /* Span all columns */
+  }
+
   .popular-searches__links {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -2695,13 +2727,17 @@ p {
   .search-results__list {
     max-width: 900px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
   }
 
   .search-result {
+    display: block;
+    width: 100%;
     padding: var(--padding-xl);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-md);
-    margin-bottom: var(--margin-lg);
     transition: box-shadow 0.3s ease;
   }
 
@@ -2734,7 +2770,6 @@ p {
   }
 
   .search-form-section {
-    background: var(--background-light);
     padding: var(--padding-2xl) 0;
   }
 
@@ -3022,7 +3057,22 @@ p {
 
 .time-slot:hover {
   border-color: var(--accent-color);
-  background: var(--accent-light);
+  background: var(--accent-color);
+  color: white;
+}
+
+.time-slot--occupied {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
+  border-color: #ddd;
+}
+
+.time-slot--occupied:hover {
+  background-color: #f5f5f5;
+  color: #999;
+  border-color: #ddd;
 }
 
 .time-slot.selected {

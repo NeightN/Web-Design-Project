@@ -67,20 +67,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Registration Modal Functionality
-  const modal = document.getElementById('registrationModal');
-  const registrationButtons = document.querySelectorAll('a[href="#registrace"], .header__cta');
-  const closeModal = document.querySelector('.modal__close');
-  const modalBackdrop = document.querySelector('.modal__backdrop');
-  const cancelButton = document.getElementById('cancelRegistration');
+  // Registration Modal Functionality - Only on main page
+  const isMainPage = !window.location.pathname.includes('/pages/');
+  
+  if (isMainPage) {
+    const modal = document.getElementById('registrationModal');
+    const registrationButtons = document.querySelectorAll('a[href="#registrace"], .header__cta');
+    const closeModal = document.querySelector('.modal__close');
+    const modalBackdrop = document.querySelector('.modal__backdrop');
+    const cancelButton = document.getElementById('cancelRegistration');
 
   // Calendar functionality
   let currentDate = new Date();
   let selectedDate = null;
   let selectedTime = null;
 
-  // Available time slots
-  const timeSlots = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00'];
+  // Available time slots - only appointment hours (13:00-16:00)
+  const timeSlots = ['13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00'];
+  
+  // Fake occupied time slots (for demo purposes)
+  const occupiedSlots = ['13:30', '14:30', '15:00'];
 
   // Open modal
   function openModal() {
@@ -210,9 +216,17 @@ document.addEventListener('DOMContentLoaded', function () {
     
     timeSlots.forEach(time => {
       const timeSlot = document.createElement('div');
-      timeSlot.className = 'time-slot';
+      const isOccupied = occupiedSlots.includes(time);
+      
+      timeSlot.className = isOccupied ? 'time-slot time-slot--occupied' : 'time-slot';
       timeSlot.textContent = time;
-      timeSlot.addEventListener('click', () => selectTime(time, timeSlot));
+      
+      if (isOccupied) {
+        timeSlot.title = 'Tento čas je již obsazený';
+      } else {
+        timeSlot.addEventListener('click', () => selectTime(time, timeSlot));
+      }
+      
       timeSlotsGrid.appendChild(timeSlot);
     });
     
@@ -356,4 +370,94 @@ document.addEventListener('DOMContentLoaded', function () {
     
     closeRegistrationModal();
   });
+  
+  } // End of isMainPage check
+
+  // Search Results Page Functionality
+  // Load search term from URL parameters and populate inputs
+  function loadSearchResults() {
+    // Check if we're on the search results page
+    const isResultsPage = window.location.pathname.includes('results.html');
+    
+    if (isResultsPage) {
+      // Get search term from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchTerm = urlParams.get('q');
+      
+      if (searchTerm) {
+        // Populate all search inputs with the search term
+        const searchInputs = document.querySelectorAll('.nav__search-input, .nav-panel__search input, .search-form__input');
+        searchInputs.forEach(input => {
+          input.value = searchTerm;
+        });
+        
+        // Update search results stats
+        updateSearchStats(searchTerm);
+        
+        // Update page title
+        document.title = `${searchTerm} - Výsledek vyhledávání - Praktický lékař`;
+      }
+    }
+  }
+
+  // Update search results statistics display
+  function updateSearchStats(searchTerm) {
+    const searchTermElement = document.querySelector('.search-results__term');
+    const searchCountElement = document.querySelector('.search-results__count');
+    
+    if (searchTermElement && searchTerm) {
+      searchCountElement.textContent = `Vyhledáno "${searchTerm}":`;
+      searchTermElement.textContent = 'Počet výsledků:';
+    }
+  }
+
+  // Add search functionality for results page inputs
+  function addResultsPageSearchListeners() {
+    const isResultsPage = window.location.pathname.includes('results.html');
+    
+    if (isResultsPage) {
+      // Add enter key support for search inputs
+      const searchInputs = document.querySelectorAll('.nav__search-input, .nav-panel__search input, .search-form__input');
+      searchInputs.forEach(input => {
+        input.addEventListener('keypress', function(event) {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            const searchTerm = this.value.trim();
+            if (searchTerm) {
+              // Reload page with new search term
+              window.location.href = `./results.html?q=${encodeURIComponent(searchTerm)}`;
+            }
+          }
+        });
+      });
+      
+      // Update search button functionality for results page
+      const searchButtons = document.querySelectorAll('.nav__search-btn, .nav-panel__search-btn, .search-form__btn');
+      searchButtons.forEach(button => {
+        // Remove previous listeners and add new ones specific to results page
+        button.replaceWith(button.cloneNode(true));
+      });
+      
+      // Re-add search button listeners for results page
+      const newSearchButtons = document.querySelectorAll('.nav__search-btn, .nav-panel__search-btn, .search-form__btn');
+      newSearchButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          
+          const searchContainer = button.closest('.nav__search, .nav-panel__search, .search-form');
+          const searchInput = searchContainer ? searchContainer.querySelector('input') : null;
+          const searchTerm = searchInput ? searchInput.value.trim() : '';
+          
+          if (searchTerm) {
+            // Reload page with new search term
+            window.location.href = `./results.html?q=${encodeURIComponent(searchTerm)}`;
+          }
+        });
+      });
+    }
+  }
+
+  // Initialize search results functionality
+  loadSearchResults();
+  addResultsPageSearchListeners();
 });

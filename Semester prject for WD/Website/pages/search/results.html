@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
     <script src="../../script.js" defer></script>
+    <script src="search-results.js" defer></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
             <li class="nav__item"><a class="nav__link" href="../../index.html#lekari">Lékaři</a></li>
             <li class="nav__item"><a class="nav__link" href="../../index.html#kontakty">Kontakty</a></li>
             <li class="nav__item"><a class="nav__link" href="../../index.html#cenik">Ceník</a></li>
-            <li class="nav__item"><a class="nav__link" href="../../index.html#registrace">Registrace</a></li>
+            <li class="nav__item"><a class="nav__link registration-trigger" href="#registrace">Registrace</a></li>
         </ul>
         <div class="nav__search">
             <input type="search" placeholder="Vyhledávání" class="nav__search-input" aria-label="Vyhledávání">
@@ -51,8 +52,8 @@
                     <li class="nav-panel__item"><a class="nav-panel__link" href="../../index.html#kontakty">Kontakty</a>
                     </li>
                     <li class="nav-panel__item"><a class="nav-panel__link" href="../../index.html#cenik">Ceník</a></li>
-                    <li class="nav-panel__item"><a class="nav-panel__link"
-                            href="../../index.html#registrace">Registrace</a></li>
+                    <li class="nav-panel__item"><a class="nav-panel__link registration-trigger"
+                            href="#registrace">Registrace</a></li>
                 </ul>
             </nav>
 
@@ -81,6 +82,21 @@
             </div>
         </section>
 
+        <!-- Search Form Section -->
+        <section class="section search-form-section">
+            <div class="section__container">
+                <form class="search-form" role="search">
+                    <div class="search-form__wrapper">
+                        <input type="search" name="q" placeholder="Vyhledávání" class="search-form__input"
+                            aria-label="Vyhledávání">
+                        <button type="button" class="search-form__btn" aria-label="Vyhledat">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
         <!-- Search Results Section -->
         <section class="section search-results">
             <div class="section__container">
@@ -96,22 +112,22 @@
                 <!-- Filter Tabs -->
                 <div class="search-filters">
                     <button class="search-filter search-filter--active" data-filter="all">
-                        Vše (4)
+                        Vše
                     </button>
                     <button class="search-filter" data-filter="news">
-                        Novinky (2)
+                        Novinky
                     </button>
                     <button class="search-filter" data-filter="services">
-                        Služby (2)
+                        Služby
                     </button>
                     <button class="search-filter" data-filter="doctors">
-                        Lékaři (0)
+                        Lékaři
                     </button>
                 </div>
 
                 <!-- Search Results List -->
                 <div class="search-results__list">
-                    <article class="search-result" data-category="news">
+                    <article class="search-result" data-category="services">
                         <h3 class="search-result__title">
                             <a href="#" class="search-result__link">EKG vyšetření</a>
                         </h3>
@@ -129,16 +145,16 @@
                         </p>
                     </article>
 
-                    <article class="search-result" data-category="news services">
+                    <article class="search-result" data-category="news">
                         <h3 class="search-result__title">
-                            <a href="#" class="search-result__link">Chytré hodiny a srdce: nová éra prevence</a>
+                            <a href="#" class="search-result__link">Chytré hodinky a srdce: nová éra prevence</a>
                         </h3>
                         <p class="search-result__description">
                             Technologie nositelných zařízení spolu s umělou inteligencí umožňují lékařům...
                         </p>
                     </article>
 
-                    <article class="search-result" data-category="services">
+                    <article class="search-result" data-category="news">
                         <h3 class="search-result__title">
                             <a href="#" class="search-result__link">Genetika a kardiologie: cílená prevence</a>
                         </h3>
