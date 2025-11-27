@@ -21,10 +21,10 @@
         </a>
         <ul class="nav__menu">
             <li class="nav__item"><a class="nav__link nav__link--active" href="#domu">O nás</a></li>
-            <li class="nav__item"><a class="nav__link" href="#sluzby">Služby</a></li>
-            <li class="nav__item"><a class="nav__link" href="#lekari">Lékaři</a></li>
-            <li class="nav__item"><a class="nav__link" href="#kontakty">Kontakty</a></li>
-            <li class="nav__item"><a class="nav__link" href="#cenik">Ceník</a></li>
+            <li class="nav__item"><a class="nav__link" href="pages/services/services.html">Služby</a></li>
+            <li class="nav__item"><a class="nav__link" href="pages/doctors/doctors.html">Lékaři</a></li>
+            <li class="nav__item"><a class="nav__link" href="pages/contacts/contacts.html">Kontakty</a></li>
+            <li class="nav__item"><a class="nav__link" href="pages/price_list/price_list.html">Ceník</a></li>
             <li class="nav__item"><a class="nav__link" href="#registrace">Registrace</a></li>
         </ul>
         <div class="nav__search">
@@ -43,12 +43,17 @@
 
             <nav class="nav-panel__nav" aria-label="Hlavní odkazy">
                 <ul class="nav-panel__list">
-                    <li class="nav-panel__item"><a class="nav-panel__link nav-panel__link--active" href="#domu">O
-                            nás</a></li>
-                    <li class="nav-panel__item"><a class="nav-panel__link" href="#sluzby">Služby</a></li>
-                    <li class="nav-panel__item"><a class="nav-panel__link" href="#lekari">Lékaři</a></li>
-                    <li class="nav-panel__item"><a class="nav-panel__link" href="#kontakty">Kontakty</a></li>
-                    <li class="nav-panel__item"><a class="nav-panel__link" href="#cenik">Ceník</a></li>
+                    <li class="nav-panel__item">
+                        <a class="nav-panel__link nav-panel__link--active" href="#domu">O nás</a>
+                    </li>
+                    <li class="nav-panel__item">
+                        <a class="nav-panel__link" href="pages/services/services.html">Služby</a>
+                    </li>
+                    <li class="nav-panel__item">
+                        <a class="nav-panel__link" href="pages/doctors/doctors.html">Lékaři</a>
+                    </li>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="pages/contacts/contacts.html">Kontakty</a></li>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="pages/price_list/price_list.html">Ceník</a></li>
                     <li class="nav-panel__item"><a class="nav-panel__link" href="#registrace">Registrace</a></li>
                 </ul>
             </nav>
@@ -79,18 +84,22 @@
         <section class="section section--about">
             <div class="section__container">
                 <h1 class="section__title">O nás</h1>
-                <p class="section__content">Naše ordinace spojuje osobní přístup s moderní medicínou. Díky online
-                    službám,
-                    efektivní komunikaci a aktuálním postupům poskytujeme péči, na kterou se můžete spolehnout. Zdraví
-                    je
-                    pro
-                    nás i pro vás prioritou.</p>
+                <p class="section__content">
+                    Naše ordinace spojuje osobní přístup s moderní medicínou, která vychází z ověřených postupů a
+                    neustálého vzdělávání. Každému pacientovi věnujeme dostatek času, pozornosti a respektu, protože
+                    věříme, že kvalitní péče začíná pochopením jeho potřeb i životní situace. Díky online službám,
+                    efektivní komunikaci a rychlé dostupnosti výsledků můžete řešit své zdraví pohodlněji než kdykoli
+                    předtím. Klientům nabízíme bezpečné a přehledné prostředí, do kterého se mohou s důvěrou vracet.
+                    Zdraví považujeme za společnou prioritu — naším cílem je nejen řešit aktuální potíže, ale také
+                    předcházet budoucím, podporovat prevenci a dlouhodobě přispívat k vašemu celkovému komfortu a
+                    spokojenosti.
+                </p>
             </div>
         </section>
-        <!-- Nejvyužívanější služby -->
+        <!-- Služby -->
         <section class="section">
             <div class="section__container">
-                <h2 class="section__title">Naše služby</h2>
+                <h1 class="section__title">Naše služby</h1>
                 <div class="services-grid">
                     <div class="service-card">
                         <i class="fa fa-stethoscope service-card__icon" aria-hidden="true"></i>
@@ -261,6 +270,7 @@
                         <p class="doctor-card__specialty">Recepční</p>
                     </div>
                 </div>
+            </div>
         </section>
         <!-- Kde nás najdete? -->
         <section class="section">
@@ -292,29 +302,29 @@
                         </thead>
                         <tbody>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Pondělí</td>
-                                <td class="hours__table-cell">08:00</td>
-                                <td class="hours__table-cell">11:30</td>
+                                <td class="hours__table-cell"><time datetime="Monday">Pondělí</time></td>
+                                <td class="hours__table-cell"><time datetime="08:00">08:00</time></td>
+                                <td class="hours__table-cell"><time datetime="11:30">11:30</time></td>
                             </tr>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Úterý</td>
-                                <td class="hours__table-cell">08:00</td>
-                                <td class="hours__table-cell">11:30</td>
+                                <td class="hours__table-cell"><time datetime="Tuesday">Úterý</time></td>
+                                <td class="hours__table-cell"><time datetime="08:00">08:00</time></td>
+                                <td class="hours__table-cell"><time datetime="11:30">11:30</time></td>
                             </tr>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Středa</td>
-                                <td class="hours__table-cell">08:00</td>
-                                <td class="hours__table-cell">11:30</td>
+                                <td class="hours__table-cell"><time datetime="Wednesday">Středa</time></td>
+                                <td class="hours__table-cell"><time datetime="08:00">08:00</time></td>
+                                <td class="hours__table-cell"><time datetime="11:30">11:30</time></td>
                             </tr>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Čtvrtek</td>
-                                <td class="hours__table-cell">08:00</td>
-                                <td class="hours__table-cell">11:30</td>
+                                <td class="hours__table-cell"><time datetime="Thursday">Čtvrtek</time></td>
+                                <td class="hours__table-cell"><time datetime="08:00">08:00</time></td>
+                                <td class="hours__table-cell"><time datetime="11:30">11:30</time></td>
                             </tr>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Pátek</td>
-                                <td class="hours__table-cell">08:00</td>
-                                <td class="hours__table-cell">11:30</td>
+                                <td class="hours__table-cell"><time datetime="Friday">Pátek</time></td>
+                                <td class="hours__table-cell"><time datetime="08:00">08:00</time></td>
+                                <td class="hours__table-cell"><time datetime="11:30">11:30</time></td>
                             </tr>
                         </tbody>
                     </table>
@@ -330,29 +340,29 @@
                         </thead>
                         <tbody>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Pondělí</td>
-                                <td class="hours__table-cell">12:30</td>
-                                <td class="hours__table-cell">16:00</td>
+                                <td class="hours__table-cell"><time datetime="Monday">Pondělí</time></td>
+                                <td class="hours__table-cell"><time datetime="12:30">12:30</time></td>
+                                <td class="hours__table-cell"><time datetime="16:00">16:00</time></td>
                             </tr>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Úterý</td>
-                                <td class="hours__table-cell">12:30</td>
-                                <td class="hours__table-cell">16:00</td>
+                                <td class="hours__table-cell"><time datetime="Tuesday">Úterý</time></td>
+                                <td class="hours__table-cell"><time datetime="12:30">12:30</time></td>
+                                <td class="hours__table-cell"><time datetime="16:00">16:00</time></td>
                             </tr>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Středa</td>
-                                <td class="hours__table-cell">12:30</td>
-                                <td class="hours__table-cell">16:00</td>
+                                <td class="hours__table-cell"><time datetime="Wednesday">Středa</time></td>
+                                <td class="hours__table-cell"><time datetime="12:30">12:30</time></td>
+                                <td class="hours__table-cell"><time datetime="16:00">16:00</time></td>
                             </tr>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Čtvrtek</td>
-                                <td class="hours__table-cell">12:30</td>
-                                <td class="hours__table-cell">16:00</td>
+                                <td class="hours__table-cell"><time datetime="Thursday">Čtvrtek</time></td>
+                                <td class="hours__table-cell"><time datetime="12:30">12:30</time></td>
+                                <td class="hours__table-cell"><time datetime="16:00">16:00</time></td>
                             </tr>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Pátek</td>
-                                <td class="hours__table-cell">12:30</td>
-                                <td class="hours__table-cell">16:00</td>
+                                <td class="hours__table-cell"><time datetime="Friday">Pátek</time></td>
+                                <td class="hours__table-cell"><time datetime="12:30">12:30</time></td>
+                                <td class="hours__table-cell"><time datetime="16:00">16:00</time></td>
                             </tr>
                         </tbody>
                     </table>
@@ -368,9 +378,9 @@
                         </thead>
                         <tbody>
                             <tr class="hours__table-row">
-                                <td class="hours__table-cell">Každý den</td>
-                                <td class="hours__table-cell">12:00</td>
-                                <td class="hours__table-cell">12:30</td>
+                                <td class="hours__table-cell"><time datetime="Everyday">Každý den</time></td>
+                                <td class="hours__table-cell"><time datetime="12:00">12:00</time></td>
+                                <td class="hours__table-cell"><time datetime="12:30">12:30</time></td>
                             </tr>
                         </tbody>
                     </table>
@@ -384,23 +394,23 @@
                 <span class="footer__title">O nás</span>
                 <ul class="footer__list">
                     <li><a class="footer__link" href="#onas">O nás</a></li>
-                    <li><a class="footer__link" href="#sluzby">Služby</a></li>
-                    <li><a class="footer__link" href="#lekari">Lékaři</a></li>
-                    <li><a class="footer__link" href="#kontakty">Kontakty</a></li>
-                    <li><a class="footer__link" href="#cenik">Ceník</a></li>
-                    <li><a class="footer__link" href="#kariera">Kariéra</a></li>
+                    <li><a class="footer__link" href="pages/services/services.html">Služby</a></li>
+                    <li><a class="footer__link" href="pages/doctors/doctors.html">Lékaři</a></li>
+                    <li><a class="footer__link" href="pages/contacts/contacts.html">Kontakty</a></li>
+                    <li><a class="footer__link" href="pages/price_list/price_list.html">Ceník</a></li>
+                    <li><a class="footer__link" href="pages/price_list/price_list.html">Kariéra</a></li>
                 </ul>
             </div>
 
             <div class="footer__col">
                 <span class="footer__title">Pro pacienty</span>
                 <ul class="footer__list">
-                    <li><a class="footer__link" href="#prakticke-informace">Praktické informace</a></li>
-                    <li><a class="footer__link" href="#novinky">Novinky</a></li>
-                    <li><a class="footer__link" href="#pokyny">Pokyny k návštěvě</a></li>
-                    <li><a class="footer__link" href="#formular">Formuláře ke stažení</a></li>
-                    <li><a class="footer__link" href="#faq">Časté dotazy (FAQ)</a></li>
-                    <li><a class="footer__link" href="#pojisteni">Informace o pojištění</a></li>
+                    <li><a class="footer__link" href="pages/price_list/price_list.html">Praktické informace</a></li>
+                    <li><a class="footer__link" href="pages/price_list/price_list.html">Novinky</a></li>
+                    <li><a class="footer__link" href="pages/price_list/price_list.html">Pokyny k návštěvě</a></li>
+                    <li><a class="footer__link" href="pages/price_list/price_list.html">Formuláře ke stažení</a></li>
+                    <li><a class="footer__link" href="pages/price_list/price_list.html">Časté dotazy (FAQ)</a></li>
+                    <li><a class="footer__link" href="pages/price_list/price_list.html">Informace o pojištění</a></li>
                 </ul>
             </div>
 

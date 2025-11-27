@@ -26,6 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
       if (currentPath.includes('/detail/')) {
         // Detail pages: /pages/doctors/detail/ or /pages/services/detail/
         resultsPath = '../../search/results.html';
+      } else if (currentPath.includes('doctors.html')) {
+        // Doctors page: /pages/doctors/doctors.html
+        resultsPath = '../search/results.html';
+      } else if (currentPath.includes('services.html')) {
+        // Services page: /pages/services/services.html
+        resultsPath = '../search/results.html';
+      } else if (currentPath.includes('contacts.html')) {
+        // Contacts page: /pages/contacts/contacts.html
+        resultsPath = '../search/results.html';
+      } else if (currentPath.includes('price_list.html')) {
+        // Price list page: /pages/price_list/price_list.html
+        resultsPath = '../search/results.html';
       } else if (currentPath.includes('/pages/')) {
         // Other pages: /pages/search/
         resultsPath = './results.html';
@@ -78,11 +90,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Registration Modal Functionality - On main page and detail pages
+  // Close nav drawer on window resize to prevent no-scroll issues
+  window.addEventListener('resize', function() {
+    if (navDrawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+
+  // Registration Modal Functionality - On main page, detail pages, doctors page, services page, contacts page and price_list page
   const isMainPage = !window.location.pathname.includes('/pages/');
   const isDetailPage = window.location.pathname.includes('/detail/');
+  const isDoctorsPage = window.location.pathname.includes('doctors.html');
+  const isServicesPage = window.location.pathname.includes('services.html');
+  const isContactsPage = window.location.pathname.includes('contacts.html');
+  const isPriceListPage = window.location.pathname.includes('price_list.html');
   
-  if (isMainPage || isDetailPage) {
+  if (isMainPage || isDetailPage || isDoctorsPage || isServicesPage || isContactsPage || isPriceListPage) {
     const modal = document.getElementById('registrationModal');
     const registrationButtons = document.querySelectorAll('a[href="#registrace"], .header__cta, .registration-trigger');
     const closeModal = document.querySelector('.modal__close');
@@ -383,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function () {
     closeRegistrationModal();
   });
   
-  } // End of isMainPage || isDetailPage check
+  } // End of isMainPage || isDetailPage || isDoctorsPage || isServicesPage || isContactsPage || isPriceListPage check
 
   // Search Results Page Functionality
   // Load search term from URL parameters and populate inputs

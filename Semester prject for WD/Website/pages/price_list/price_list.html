@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Služby - Praktický lékař</title>
+    <title>Ceník - Praktický lékař</title>
     <meta name="description"
         content="Komplexní informace o MUDr. Janu Pospíšilovi, praktickém lékaři pro dospělé pacienty. Specializace na prevenci a léčbu chronických onemocnění.">
     <link rel="icon" type="image/x-icon" href="../../assets/icons/doctor_16.ico">
@@ -24,10 +24,10 @@
         </a>
         <ul class="nav__menu">
             <li class="nav__item"><a class="nav__link" href="../../index.html#domu">O nás</a></li>
-            <li class="nav__item"><a class="nav__link nav__link--active" href="services.html">Služby</a></li>
+            <li class="nav__item"><a class="nav__link" href="../services/services.html">Služby</a></li>
             <li class="nav__item"><a class="nav__link" href="../doctors/doctors.html">Lékaři</a></li>
             <li class="nav__item"><a class="nav__link" href="../contacts/contacts.html">Kontakty</a></li>
-            <li class="nav__item"><a class="nav__link" href="../price_list/price_list.html">Ceník</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--active" href="price_list.html">Ceník</a></li>
             <li class="nav__item"><a class="nav__link registration-trigger" href="#registrace">Registrace</a></li>
         </ul>
         <div class="nav__search">
@@ -48,13 +48,13 @@
                 <ul class="nav-panel__list">
                     <li class="nav-panel__item"><a class="nav-panel__link" href="../../index.html#domu">O nás</a>
                     </li>
-                    <li class="nav-panel__item"><a class="nav-panel__link nav-panel__link--active" href="services.html">Služby</a>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="../services/services.html">Služby</a>
                     </li>
                     <li class="nav-panel__item"><a class="nav-panel__link" href="../doctors/doctors.html">Lékaři</a>
                     </li>
                     <li class="nav-panel__item"><a class="nav-panel__link" href="../contacts/contacts.html">Kontakty</a>
                     </li>
-                    <li class="nav-panel__item"><a class="nav-panel__link" href="../price_list/price_list.html">Ceník</a>
+                    <li class="nav-panel__item"><a class="nav-panel__link nav-panel__link--active" href="price_list.html">Ceník</a>
                     </li>
                     <li class="nav-panel__item"><a class="nav-panel__link registration-trigger"
                             href="#registrace">Registrace</a></li>
@@ -80,90 +80,97 @@
                 <nav class="breadcrumb__nav" aria-label="Navigace">
                     <a href="../../index.html" class="breadcrumb__link">O nás</a>
                     <span class="breadcrumb__separator">></span>
-                    <span class="breadcrumb__current">Služby</span>
+                    <span class="breadcrumb__current">Ceník</span>
                 </nav>
             </div>
         </section>
 
-        <!-- Služby -->
-        <section class="section">
+        <!-- Price List Section -->
+        <section class="section section--price-list" id="cenik">
             <div class="section__container">
-                <h1 class="section__title">Naše služby</h1>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <i class="fa fa-stethoscope service-card__icon" aria-hidden="true"></i>
-                        <h2 class="service-card__title">
-                            <a href="detail/service_detail.html" class="service-card__link">
-                                Akutní vyšetření
-                            </a>
-                        </h2>
-                        <p class="service-card__description">Rychlá péče při náhlých potížích</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fa fa-heartbeat service-card__icon" aria-hidden="true"></i>
-                        <h2 class="service-card__title">
-                            <a href="detail/service_detail.html" class="service-card__link">
-                                Diagnostika
-                            </a>
-                        </h2>
-                        <p class="service-card__description">Moderní vyšetřovací metody</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fa fa-flask service-card__icon" aria-hidden="true"></i>
-
-                        <h2 class="service-card__title">
-                            <a href="detail/service_detail.html" class="service-card__link">
-                                Laboratorní testy
-                            </a>
-                        </h2>
-                        <p class="service-card__description">Rychlé a přesné výsledky</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fa fa-syringe service-card__icon" aria-hidden="true"></i>
-                        <h2 class="service-card__title">
-                            <a href="detail/service_detail.html" class="service-card__link">
-                                Očkování
-                            </a>
-                        </h2>
-                        <p class="service-card__description">Preventivní i cestovní vakcíny</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fa fa-heart service-card__icon" aria-hidden="true"></i>
-                        <h2 class="service-card__title">
-                            <a href="detail/service_detail.html" class="service-card__link">
-                                Preventivní prohlídky
-                            </a>
-                        </h2>
-                        <p class="service-card__description">Prevence je základ zdraví</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fa fa-file-text service-card__icon" aria-hidden="true"></i>
-                        <h2 class="service-card__title">
-                            <a href="detail/service_detail.html" class="service-card__link">
-                                Lékařské posudky
-                            </a>
-                        </h2>
-                        <p class="service-card__description">Posudky a dokumentace</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fa fa-share-square service-card__icon" aria-hidden="true"></i>
-                        <h2 class="service-card__title">
-                            <a href="detail/service_detail.html" class="service-card__link">
-                                Doporučení k odborníkům
-                            </a>
-                        </h2>
-                        <p class="service-card__description">Doporučení a převod k odborníkům</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fa fa-laptop service-card__icon" aria-hidden="true"></i>
-                        <h2 class="service-card__title">
-                            <a href="detail/service_detail.html" class="service-card__link">
-                                Online poradna
-                            </a>
-                        </h2>
-                        <p class="service-card__description">Poradna z pohodlí domova</p>
-                    </div>
+                <h1 class="section__title">Ceník služeb</h1>
+                <article class="price-list__info">
+                    <p class="price-list__description">Naše ordinace nabízí širokou škálu služeb za konkurenceschopné ceny. Níže naleznete přehled
+                        našich
+                        služeb a jejich cen.</p>
+                </article>
+                <div class="price-list__tables">
+                    <table class="price-list__table">
+                        <caption class="price-list__caption" id="noncurrent">
+                            Ceník pro neregistrované pacienty s pojišťovnou
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="price-list__header">Služba</th>
+                                <th class="price-list__header">Cena (CZK)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="price-list__service">Preventivní prohlídka</td>
+                                <td class="price-list__price">300 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">Očkování</td>
+                                <td class="price-list__price">300 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">Krevní testy</td>
+                                <td class="price-list__price">400 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">EKG vyšetření</td>
+                                <td class="price-list__price">600 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">Lékařská konzultace</td>
+                                <td class="price-list__price">350 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">Výdej léků na předpis</td>
+                                <td class="price-list__price">150 Kč</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="price-list__table">
+                        <caption class="price-list__caption" id="current">
+                            Ceník pro registrované pacienty s pojišťovnou
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="price-list__header">Služba</th>
+                                <th class="price-list__header">Cena (CZK)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="price-list__service">Preventivní prohlídka</td>
+                                <td class="price-list__price">0 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">Očkování</td>
+                                <td class="price-list__price">0 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">Krevní testy</td>
+                                <td class="price-list__price">0 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">EKG vyšetření</td>
+                                <td class="price-list__price">350 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">Lékařská konzultace</td>
+                                <td class="price-list__price">0 Kč</td>
+                            </tr>
+                            <tr>
+                                <td class="price-list__service">Výdej léků na předpis</td>
+                                <td class="price-list__price">0 Kč</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
         </section>
     </main>
     <footer class="footer" role="contentinfo">
@@ -172,23 +179,23 @@
                 <span class="footer__title">O nás</span>
                 <ul class="footer__list">
                     <li><a class="footer__link" href="../../index.html#onas">O nás</a></li>
-                    <li><a class="footer__link" href="services.html">Služby</a></li>
+                    <li><a class="footer__link" href="../services/services.html">Služby</a></li>
                     <li><a class="footer__link" href="../doctors/doctors.html">Lékaři</a></li>
                     <li><a class="footer__link" href="../contacts/contacts.html">Kontakty</a></li>
-                    <li><a class="footer__link" href="../price_list/price_list.html">Ceník</a></li>
-                    <li><a class="footer__link" href="../price_list/price_list.html">Kariéra</a></li>
+                    <li><a class="footer__link" href="price_list.html">Ceník</a></li>
+                    <li><a class="footer__link" href="price_list.html">Kariéra</a></li>
                 </ul>
             </div>
 
             <div class="footer__col">
                 <span class="footer__title">Pro pacienty</span>
                 <ul class="footer__list">
-                    <li><a class="footer__link" href="../price_list/price_list.html">Praktické informace</a></li>
-                    <li><a class="footer__link" href="../price_list/price_list.html">Novinky</a></li>
-                    <li><a class="footer__link" href="../price_list/price_list.html">Pokyny k návštěvě</a></li>
-                    <li><a class="footer__link" href="../price_list/price_list.html">Formuláře ke stažení</a></li>
-                    <li><a class="footer__link" href="../price_list/price_list.html">Časté dotazy (FAQ)</a></li>
-                    <li><a class="footer__link" href="../price_list/price_list.html">Informace o pojistění</a></li>
+                    <li><a class="footer__link" href="price_list.html">Praktické informace</a></li>
+                    <li><a class="footer__link" href="price_list.html">Novinky</a></li>
+                    <li><a class="footer__link" href="price_list.html">Pokyny k návštěvě</a></li>
+                    <li><a class="footer__link" href="price_list.html">Formuláře ke stažení</a></li>
+                    <li><a class="footer__link" href="price_list.html">Časté dotazy (FAQ)</a></li>
+                    <li><a class="footer__link" href="price_list.html">Informace o pojistění</a></li>
                 </ul>
             </div>
 
