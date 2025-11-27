@@ -20,8 +20,19 @@ document.addEventListener('DOMContentLoaded', function () {
       const searchTerm = searchInput ? searchInput.value.trim() : '';
       
       // Determine the correct path based on current location
-      const isInSubfolder = window.location.pathname.includes('/pages/');
-      const resultsPath = isInSubfolder ? './results.html' : './pages/search/results.html';
+      const currentPath = window.location.pathname;
+      let resultsPath;
+      
+      if (currentPath.includes('/detail/')) {
+        // Detail pages: /pages/doctors/detail/ or /pages/services/detail/
+        resultsPath = '../../search/results.html';
+      } else if (currentPath.includes('/pages/')) {
+        // Other pages: /pages/search/
+        resultsPath = './results.html';
+      } else {
+        // Main page
+        resultsPath = './pages/search/results.html';
+      }
       
       // Redirect to results page (with search term if provided)
       if (searchTerm) {
@@ -67,12 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Registration Modal Functionality - Only on main page
+  // Registration Modal Functionality - On main page and detail pages
   const isMainPage = !window.location.pathname.includes('/pages/');
+  const isDetailPage = window.location.pathname.includes('/detail/');
   
-  if (isMainPage) {
+  if (isMainPage || isDetailPage) {
     const modal = document.getElementById('registrationModal');
-    const registrationButtons = document.querySelectorAll('a[href="#registrace"], .header__cta');
+    const registrationButtons = document.querySelectorAll('a[href="#registrace"], .header__cta, .registration-trigger');
     const closeModal = document.querySelector('.modal__close');
     const modalBackdrop = document.querySelector('.modal__backdrop');
     const cancelButton = document.getElementById('cancelRegistration');
@@ -371,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
     closeRegistrationModal();
   });
   
-  } // End of isMainPage check
+  } // End of isMainPage || isDetailPage check
 
   // Search Results Page Functionality
   // Load search term from URL parameters and populate inputs
