@@ -615,8 +615,7 @@ p {
     margin: 0 auto;
     line-height: 1.6;
   }
-
-  /* Schedule Tables - Flexbox for Mobile */
+  
   .hours {
     display: flex;
     flex-direction: column;
@@ -679,13 +678,6 @@ p {
   }
 
   /* Schedule Tables - Flexbox for Mobile */
-  .hours {
-    display: flex;
-    flex-direction: column;
-    gap: var(--margin-lg);
-    margin-top: var(--margin-lg);
-  }
-
   .price-list__table {
     min-width: auto;
     border-collapse: collapse;
@@ -1499,14 +1491,6 @@ p {
 
   .footer {
     grid-area: footer;
-  }
-
-  /* Hours layout for tablet - 3 columns */
-  .hours {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--margin-lg);
-    margin-top: var(--margin-lg);
   }
 
   /* Price list layout for tablet - 2 columns */
