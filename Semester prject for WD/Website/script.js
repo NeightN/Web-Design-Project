@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchCountElement = document.querySelector('.search-results__count');
     
     if (searchTermElement && searchTerm) {
-      searchCountElement.textContent = `Vyhledáno "${searchTerm}":`;
+      searchCountElement.textContent = `Vyhledáno: "${searchTerm}"`;
       searchTermElement.textContent = 'Počet výsledků:';
     }
   }
