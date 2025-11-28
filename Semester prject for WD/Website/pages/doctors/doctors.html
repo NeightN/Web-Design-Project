@@ -31,13 +31,14 @@
             <li class="nav__item"><a class="nav__link registration-trigger" href="#registrace">Registrace</a></li>
         </ul>
         <div class="nav__search">
-            <input type="search" placeholder="Vyhledávání" class="nav__search-input" aria-label="Vyhledávání">
+            <label for="navSearchInput" class="sr-only">Vyhledávání</label>
+            <input type="search" id="navSearchInput" placeholder="Vyhledávání" class="nav__search-input" aria-label="Vyhledávání">
             <button type="button" class="nav__search-btn" aria-label="Vyhledat">
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <span class="fa fa-search" aria-hidden="true"></span>
             </button>
         </div>
         <button class="nav__toggle" aria-label="Otevřít menu" aria-expanded="false">
-            <i class="fa fa-bars nav__toggle-icon"></i>
+            <span class="fa fa-bars nav__toggle-icon" ></span>
         </button>
     </nav>
 
@@ -62,7 +63,8 @@
             </nav>
 
             <form class="nav-panel__search" role="search">
-                <input type="search" name="q" placeholder="Hledat..." aria-label="Hledat" />
+                <label for="mobileSearchInput" class="sr-only">Hledat</label>
+                <input type="search" id="mobileSearchInput" name="q" placeholder="Hledat..." aria-label="Hledat" />
                 <button type="button" class="nav-panel__search-btn" aria-label="Vyhledat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true">
@@ -103,7 +105,7 @@
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-card__photo">
-                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                            <span class="fa fa-user-md doctor-card__icon" aria-hidden="true"></span>
                         </div>
                         <h2 class="doctor-card__name">
                             <a href="detail/doctor_detail.html" class="doctor-card__link">
@@ -114,7 +116,7 @@
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-card__photo">
-                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                            <span class="fa fa-user-md doctor-card__icon" aria-hidden="true"></span>
                         </div>
                         <h2 class="doctor-card__name">
                             <a href="detail/doctor_detail.html" class="doctor-card__link">
@@ -125,7 +127,7 @@
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-card__photo">
-                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                            <span class="fa fa-user-md doctor-card__icon" aria-hidden="true"></span>
                         </div>
                         <h2 class="doctor-card__name">
                             <a href="detail/doctor_detail.html" class="doctor-card__link">
@@ -136,7 +138,7 @@
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-card__photo">
-                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                            <span class="fa fa-user-md doctor-card__icon" aria-hidden="true"></span>
                         </div>
                         <h2 class="doctor-card__name">
                             <a href="detail/doctor_detail.html" class="doctor-card__link">
@@ -147,7 +149,7 @@
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-card__photo">
-                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                            <span class="fa fa-user-md doctor-card__icon" aria-hidden="true"></span>
                         </div>
                         <h2 class="doctor-card__name">
                             <a href="detail/doctor_detail.html" class="doctor-card__link">
@@ -158,7 +160,7 @@
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-card__photo">
-                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                            <span class="fa fa-user-md doctor-card__icon" aria-hidden="true"></span>
                         </div>
                         <h2 class="doctor-card__name">
                             <a href="detail/doctor_detail.html" class="doctor-card__link">
@@ -169,7 +171,7 @@
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-card__photo">
-                            <i class="fa fa-user-md doctor-card__icon" aria-hidden="true"></i>
+                            <span class="fa fa-user-md doctor-card__icon" aria-hidden="true"></span>
                         </div>
                         <h2 class="doctor-card__name">
                             <a href="detail/doctor_detail.html" class="doctor-card__link">
@@ -231,16 +233,16 @@
                 <span class="footer__title">Sledujte nás</span>
                 <p class="footer__social">
                     <a href="#" class="social__link" aria-label="Facebook">
-                        <i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
+                        <span class="fa-brands fa-square-facebook" aria-hidden="true"></span>
                     </a>
                     <a href="#" class="social__link" aria-label="Instagram">
-                        <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+                        <span class="fa-brands fa-square-instagram" aria-hidden="true"></span>
                     </a>
                     <a href="#" class="social__link" aria-label="LinkedIn">
-                        <i class="fa-brands fa-square-linkedin" aria-hidden="true"></i>
+                        <span class="fa-brands fa-square-linkedin" aria-hidden="true"></span>
                     </a>
                     <a href="#" class="social__link" aria-label="X (bývalý Twitter)">
-                        <i class="fa-brands fa-square-x-twitter" aria-hidden="true"></i>
+                        <span class="fa-brands fa-square-x-twitter" aria-hidden="true"></span>
                     </a>
                 </p>
             </div>
@@ -258,7 +260,7 @@
             <div class="modal__header">
                 <h2 id="modal-title" class="modal__title">Registrace k lékaři</h2>
                 <button class="modal__close" aria-label="Zavřít formulář">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <span class="fa fa-times" aria-hidden="true"></span>
                 </button>
             </div>
             <form class="registration-form" id="registrationForm">
@@ -288,11 +290,11 @@
                         <div class="calendar-container">
                             <div class="calendar-header">
                                 <button type="button" class="calendar-nav" id="prevMonth" aria-label="Předchozí měsíc">
-                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                    <span class="fa fa-chevron-left" aria-hidden="true"></span>
                                 </button>
                                 <h3 class="calendar-title" id="calendarTitle"></h3>
                                 <button type="button" class="calendar-nav" id="nextMonth" aria-label="Další měsíc">
-                                    <i class="fa fa-chevron-right" aria-label="true"></i>
+                                    <span class="fa fa-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
                             <div class="calendar-grid" id="calendarGrid">
@@ -316,7 +318,7 @@
                     <input type="hidden" id="selectedDateTime" name="selectedDateTime">
                 </div>
                 <div class="form-group form-group--full">
-                    <label class="checkbox-label">
+                    <label class="checkbox-label" for="gdprConsent">
                         <input type="checkbox" id="gdprConsent" name="gdprConsent" class="checkbox-input">
                         <span class="checkbox-custom"></span>
                         <span class="checkbox-text">Souhlasím se zpracováním osobních údajů pro účely objednání k lékaři
