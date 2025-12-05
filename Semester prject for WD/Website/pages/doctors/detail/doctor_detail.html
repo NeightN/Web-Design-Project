@@ -23,16 +23,27 @@
             <span class="nav__logo-text">Praktický lékař</span>
         </a>
         <ul class="nav__menu">
-            <li class="nav__item"><a class="nav__link" href="../../../index.html#domu">O nás</a></li>
+            <li class="nav__item"><a class="nav__link" href="../../../index.html#domu">Domů</a></li>
             <li class="nav__item"><a class="nav__link" href="../../services/services.html">Služby</a></li>
             <li class="nav__item"><a class="nav__link" href="../doctors.html">Lékaři</a></li>
             <li class="nav__item"><a class="nav__link" href="../../contacts/contacts.html">Kontakty</a></li>
             <li class="nav__item"><a class="nav__link" href="../../price_list/price_list.html">Ceník</a></li>
+            <li class="nav__item nav__item--dropdown">
+                <a class="nav__link nav__link--dropdown" href="#" aria-expanded="false" aria-haspopup="true">Pro pacienty</a>
+                <ul class="nav__dropdown">
+                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="../../patient/practical_info.html">Praktické informace</a></li>
+                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="../../patient/practical_info.html">Novinky</a></li>
+                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="../../patient/practical_info.html">Pokyny k návštěvě</a></li>
+                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="../../patient/practical_info.html">Formuláře ke stažení</a></li>
+                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="../../patient/practical_info.html">Časté dotazy (FAQ)</a></li>
+                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="../../patient/practical_info.html">Informace o pojištění</a></li>
+                </ul>
+            </li>
             <li class="nav__item"><a class="nav__link registration-trigger" href="#registrace">Registrace</a></li>
         </ul>
         <div class="nav__search">
             <label for="navSearchInput" class="sr-only">Vyhledávání</label>
-            <input type="search" id="navSearchInput" placeholder="Vyhledávání" class="nav__search-input" aria-label="Vyhledávání">
+            <input type="search" id="navSearchInput" placeholder="Vyhledávání" class="nav__search-input" aria-label="Vyhledávání" value="srdce">
             <button type="button" class="nav__search-btn" aria-label="Vyhledat">
                 <span class="fa fa-search" aria-hidden="true"></span>
             </button>
@@ -47,7 +58,7 @@
         <aside class="nav-panel" role="dialog" aria-label="Hlavní menu">
             <nav class="nav-panel__nav" aria-label="Hlavní odkazy">
                 <ul class="nav-panel__list">
-                    <li class="nav-panel__item"><a class="nav-panel__link" href="../../../index.html#domu">O nás</a>
+                    <li class="nav-panel__item"><a class="nav-panel__link" href="../../../index.html#domu">Domů</a>
                     </li>
                     <li class="nav-panel__item"><a class="nav-panel__link" href="../../services/services.html">Služby</a>
                     </li>
@@ -58,6 +69,17 @@
                     </li>
                     <li class="nav-panel__item"><a class="nav-panel__link" href="../../price_list/price_list.html">Ceník</a>
                     </li>
+                    <li class="nav-panel__item nav-panel__item--dropdown">
+                        <a class="nav-panel__link nav-panel__link--dropdown" href="#" aria-expanded="false" aria-haspopup="true">Pro pacienty</a>
+                        <ul class="nav-panel__dropdown">
+                            <li class="nav-panel__dropdown-item"><a class="nav-panel__dropdown-link" href="../../patient/practical_info.html">Praktické informace</a></li>
+                            <li class="nav-panel__dropdown-item"><a class="nav-panel__dropdown-link" href="../../patient/practical_info.html">Novinky</a></li>
+                            <li class="nav-panel__dropdown-item"><a class="nav-panel__dropdown-link" href="../../patient/practical_info.html">Pokyny k návštěvě</a></li>
+                            <li class="nav-panel__dropdown-item"><a class="nav-panel__dropdown-link" href="../../patient/practical_info.html">Formuláře ke stažení</a></li>
+                            <li class="nav-panel__dropdown-item"><a class="nav-panel__dropdown-link" href="../../patient/practical_info.html">Časté dotazy (FAQ)</a></li>
+                            <li class="nav-panel__dropdown-item"><a class="nav-panel__dropdown-link" href="../../patient/practical_info.html">Informace o pojištění</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-panel__item"><a class="nav-panel__link registration-trigger"
                             href="#registrace">Registrace</a></li>
                 </ul>
@@ -65,7 +87,7 @@
 
             <form class="nav-panel__search" role="search">
                 <label for="mobileSearchInput" class="sr-only">Hledat</label>
-                <input type="search" id="mobileSearchInput" name="q" placeholder="Hledat..." aria-label="Hledat" />
+                <input type="search" id="mobileSearchInput" name="q" placeholder="Hledat..." aria-label="Hledat" value="srdce" />
                 <button type="button" class="nav-panel__search-btn" aria-label="Vyhledat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true">
@@ -81,8 +103,8 @@
         <section class="breadcrumb">
             <div class="section__container">
                 <nav class="breadcrumb__nav" aria-label="Navigace">
-                    <a href="../../../index.html" class="breadcrumb__link">O nás</a>
-                    <span class="breadcrumb__separator">></span>
+                    <a href="../../../index.html" class="breadcrumb__link">Domů</a>
+                    <span class="breadcrumb__separator"> > </span>
                     <a href="../doctors.html" class="breadcrumb__link">Lékaři</a>
                     <span class="breadcrumb__separator">></span>
                     <span class="breadcrumb__current">Detail lékaře</span>
@@ -171,7 +193,7 @@
             <div class="footer__col">
                 <span class="footer__title">O nás</span>
                 <ul class="footer__list">
-                    <li><a class="footer__link" href="../../../index.html#onas">O nás</a></li>
+                    <li><a class="footer__link" href="../../../index.html#onas">Domů</a></li>
                     <li><a class="footer__link" href="../../services/services.html">Služby</a></li>
                     <li><a class="footer__link" href="../doctors.html">Lékaři</a></li>
                     <li><a class="footer__link" href="../../contacts/contacts.html">Kontakty</a></li>
@@ -183,12 +205,12 @@
             <div class="footer__col">
                 <span class="footer__title">Pro pacienty</span>
                 <ul class="footer__list">
-                    <li><a class="footer__link" href="../../price_list/price_list.html">Praktické informace</a></li>
-                    <li><a class="footer__link" href="../../price_list/price_list.html">Novinky</a></li>
-                    <li><a class="footer__link" href="../../price_list/price_list.html">Pokyny k návštěvě</a></li>
-                    <li><a class="footer__link" href="../../price_list/price_list.html">Formuláře ke stažení</a></li>
-                    <li><a class="footer__link" href="../../price_list/price_list.html">Časté dotazy (FAQ)</a></li>
-                    <li><a class="footer__link" href="../../price_list/price_list.html">Informace o pojištění</a></li>
+                    <li><a class="footer__link" href="../../patient/practical_info.html">Praktické informace</a></li>
+                    <li><a class="footer__link" href="../../patient/practical_info.html">Novinky</a></li>
+                    <li><a class="footer__link" href="../../patient/practical_info.html">Pokyny k návštěvě</a></li>
+                    <li><a class="footer__link" href="../../patient/practical_info.html">Formuláře ke stažení</a></li>
+                    <li><a class="footer__link" href="../../patient/practical_info.html">Časté dotazy (FAQ)</a></li>
+                    <li><a class="footer__link" href="../../patient/practical_info.html">Informace o pojištění</a></li>
                 </ul>
             </div>
 
@@ -248,21 +270,21 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName" class="form-label">Jméno *</label>
-                        <input type="text" id="firstName" name="firstName" class="form-input" required>
+                        <input type="text" id="firstName" name="firstName" class="form-input" required value="Jan">
                     </div>
                     <div class="form-group">
                         <label for="lastName" class="form-label">Příjmení *</label>
-                        <input type="text" id="lastName" name="lastName" class="form-input" required>
+                        <input type="text" id="lastName" name="lastName" class="form-input" required value="Novák">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email" class="form-label">E-mail *</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
+                        <input type="email" id="email" name="email" class="form-input" required value="jan.novak@email.cz">
                     </div>
                     <div class="form-group">
                         <label for="phone" class="form-label">Telefon *</label>
-                        <input type="tel" id="phone" name="phone" class="form-input" required>
+                        <input type="tel" id="phone" name="phone" class="form-input" required value="+420 123 456 789">
                     </div>
                 </div>
                 <div class="form-group form-group--full">

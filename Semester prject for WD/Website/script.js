@@ -69,7 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function closeDrawer() {
     navDrawer.classList.remove('open');
-    document.body.classList.remove('no-scroll');
+    // Only remove no-scroll if modal is not open
+    const modal = document.getElementById('registrationModal');
+    if (!modal || !modal.classList.contains('active')) {
+      document.body.classList.remove('no-scroll');
+    }
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Otevřít menu');
     navDrawer.setAttribute('aria-hidden', 'true');
@@ -135,7 +139,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Close modal
   function closeRegistrationModal() {
     modal.classList.remove('active');
-    document.body.classList.remove('no-scroll');
+    // Only remove no-scroll if navigation drawer is not open
+    if (!navDrawer.classList.contains('open')) {
+      document.body.classList.remove('no-scroll');
+    }
     modal.setAttribute('aria-hidden', 'true');
     resetForm();
   }
@@ -495,4 +502,92 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize search results functionality
   loadSearchResults();
   addResultsPageSearchListeners();
+
+  // Initialize dropdown functionality
+  initializeDropdowns();
 });
+
+// Dropdown menu functionality
+function initializeDropdowns() {
+  // Desktop dropdown functionality
+  const desktopDropdownItems = document.querySelectorAll('.nav__item--dropdown');
+  
+  desktopDropdownItems.forEach(dropdown => {
+    const link = dropdown.querySelector('.nav__link--dropdown');
+    const menu = dropdown.querySelector('.nav__dropdown');
+    
+    if (!link || !menu) return;
+    
+    // Mouse enter/leave for desktop
+    dropdown.addEventListener('mouseenter', () => {
+      link.setAttribute('aria-expanded', 'true');
+    });
+    
+    dropdown.addEventListener('mouseleave', () => {
+      link.setAttribute('aria-expanded', 'false');
+    });
+    
+    // Click handling for accessibility
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isExpanded = link.getAttribute('aria-expanded') === 'true';
+      link.setAttribute('aria-expanded', !isExpanded);
+    });
+    
+    // Keyboard navigation
+    link.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isExpanded = link.getAttribute('aria-expanded') === 'true';
+        link.setAttribute('aria-expanded', !isExpanded);
+      } else if (e.key === 'Escape') {
+        link.setAttribute('aria-expanded', 'false');
+        link.focus();
+      }
+    });
+  });
+  
+  // Mobile dropdown functionality
+  const mobileDropdownItems = document.querySelectorAll('.nav-panel__item--dropdown');
+  
+  mobileDropdownItems.forEach(dropdown => {
+    const link = dropdown.querySelector('.nav-panel__link--dropdown');
+    const menu = dropdown.querySelector('.nav-panel__dropdown');
+    
+    if (!link || !menu) return;
+    
+    // Click handling for mobile
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isExpanded = dropdown.getAttribute('aria-expanded') === 'true';
+      dropdown.setAttribute('aria-expanded', !isExpanded);
+    });
+    
+    // Keyboard navigation
+    link.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isExpanded = dropdown.getAttribute('aria-expanded') === 'true';
+        dropdown.setAttribute('aria-expanded', !isExpanded);
+      } else if (e.key === 'Escape') {
+        dropdown.setAttribute('aria-expanded', 'false');
+        link.focus();
+      }
+    });
+  });
+  
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav__item--dropdown, .nav-panel__item--dropdown')) {
+      // Close all dropdowns
+      desktopDropdownItems.forEach(dropdown => {
+        const link = dropdown.querySelector('.nav__link--dropdown');
+        if (link) link.setAttribute('aria-expanded', 'false');
+      });
+      
+      mobileDropdownItems.forEach(dropdown => {
+        dropdown.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+}
