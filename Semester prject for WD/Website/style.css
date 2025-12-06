@@ -166,9 +166,6 @@ p {
     /* 16px */
     --spacing-xl: 1.5rem;
     /* 24px */
-
-    /* Navbar height including padding */
-    --navbar-total-height: calc(80px + 2 * var(--spacing-md));
   }
 
   body {
@@ -253,7 +250,7 @@ p {
   .nav-drawer .nav-panel {
     position: fixed;
     right: 0;
-    top: var(--navbar-total-height);
+    top: calc(80px);
     bottom: 0;
     width: 100%;
     background: var(--gradient-background-transparent);
@@ -1542,7 +1539,7 @@ p {
   .nav-drawer .nav-panel {
     position: fixed;
     right: 0;
-    top: calc(80px + 2 * var(--spacing-md));
+    top: calc(80px);
     bottom: 0;
     width: 100%;
     background: var(--gradient-background-transparent);
