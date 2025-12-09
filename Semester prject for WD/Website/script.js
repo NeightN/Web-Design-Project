@@ -101,15 +101,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Registration Modal Functionality - On main page, detail pages, doctors page, services page, contacts page and price_list page
+  // Registration Modal Functionality - On main page, detail pages, doctors page, services page, contacts page, price_list page and practical_info page
   const isMainPage = !window.location.pathname.includes('/pages/');
   const isDetailPage = window.location.pathname.includes('/detail/');
   const isDoctorsPage = window.location.pathname.includes('doctors.html');
   const isServicesPage = window.location.pathname.includes('services.html');
   const isContactsPage = window.location.pathname.includes('contacts.html');
   const isPriceListPage = window.location.pathname.includes('price_list.html');
+  const isPracticalInfoPage = window.location.pathname.includes('practical_info.html');
   
-  if (isMainPage || isDetailPage || isDoctorsPage || isServicesPage || isContactsPage || isPriceListPage) {
+  if (isMainPage || isDetailPage || isDoctorsPage || isServicesPage || isContactsPage || isPriceListPage || isPracticalInfoPage) {
     const modal = document.getElementById('registrationModal');
     const registrationButtons = document.querySelectorAll('a[href="#registrace"], .header__cta, .registration-trigger');
     const closeModal = document.querySelector('.modal__close');
