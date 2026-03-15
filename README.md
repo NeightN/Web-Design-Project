@@ -56,3 +56,64 @@ Studentský projekt **ČZU PEF** pro předmět **Web design**.
 ## Poznámka
 
 Tento projekt je určen pro studijní účely (školní zadání).
+
+---
+
+# Web-Design-Project – General Practitioner (CZU FEM)
+
+A student semester project for **Czech University of Life Sciences Prague (CZU)** – **Faculty of Economics and Management (FEM)**, for the **Web Design** course.  
+The goal is to design and implement a multi-page website on the topic of a **general practitioner / medical clinic**, including basic JavaScript interactions.
+
+## Running the project
+
+No installation or build step is required.
+
+1. Open the folder:
+   `Semester prject for WD/Website/`
+2. Open:
+   `index.html` (double-click in your browser)
+
+Recommended: use a modern browser (Chrome/Edge/Firefox).
+
+## Technologies used
+
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- Icons: **Font Awesome** (loaded via CDN)
+
+## Project structure (main website)
+
+- `Semester prject for WD/Website/index.html` – landing page
+- `Semester prject for WD/Website/style.css` – styles
+- `Semester prject for WD/Website/script.js` – scripts & interactivity
+- `Semester prject for WD/Website/assets/` – images, icons, and other static assets
+- `Semester prject for WD/Website/pages/` – subpages:
+  - `services/` – services
+  - `doctors/` – doctors / team
+  - `contacts/` – contacts
+  - `price_list/` – price list
+  - `patient/` – “For patients” section (practical info, etc.)
+  - `search/` – search page
+
+## Features (highlights)
+
+- Navigation including a **“For patients”** dropdown
+- Responsive navigation (mobile drawer)
+- Landing page sections:
+  - **About us**
+  - **Our services**
+  - **Our team**
+  - **Map** (embedded via Google Maps iframe)
+  - **Opening hours** (tables)
+- **Registration**: the “Register” button opens a modal registration form  
+  (including date/time selection and a required personal data processing consent checkbox)
+
+## Authors
+
+© 2025 Němec N., Cuzor V., Procházka P., Legutko P.  
+Student project (CZU FEM) for the Web Design course.
+
+## Note
+
+This project is intended for educational purposes only.
