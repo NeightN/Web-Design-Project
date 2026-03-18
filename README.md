@@ -122,18 +122,20 @@ This project is intended for educational purposes only.
 
 ## Screens
 
-Úvodní stránka
+Úvodní stránka / Home Page
 
-![Úvodní stránka](image1)
+![Home Page](https://imgur.com/a/b7LdtvU)
 
-Registrace (modal)
+Registrace / Registration (modal)
 
-![Registrace](image2)
+![Registrace](https://imgur.com/a/drbuHAn)
 
-Služby
+Služby / Services
 
-![Služby](image3)
+![Services](https://imgur.com/a/MNrd6aC)
 
- Kontakt / mapa + ordinační hodiny
+ Mapa a ordinační hodiny / Map and Office Hours
 
-![Kontakt a ordinační hodiny](image4)
+![Map and Office Hours](https://imgur.com/a/r9GEqoy)
+
+
