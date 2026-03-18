@@ -124,18 +124,18 @@ This project is intended for educational purposes only.
 
 Úvodní stránka / Home Page
 
-![Home Page](https://imgur.com/a/b7LdtvU)
+![Home Page](https://i.imgur.com/6xz4eSM.png)
 
 Registrace / Registration (modal)
 
-![Registrace](https://imgur.com/a/drbuHAn)
+![Registrace](https://i.imgur.com/1oPi0J6.png)
 
 Služby / Services
 
-![Services](https://imgur.com/a/MNrd6aC)
+![Services](https://i.imgur.com/3G3R9DS.png)
 
  Mapa a ordinační hodiny / Map and Office Hours
 
-![Map and Office Hours](https://imgur.com/a/r9GEqoy)
+![Map and Office Hours](https://i.imgur.com/0TRY1dg.png)
 
 
