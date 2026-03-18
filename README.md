@@ -48,6 +48,18 @@ Doporučeno: prohlížet v moderním prohlížeči (Chrome/Edge/Firefox).
 - **Registrace**: tlačítko „Registrovat se“ otevírá registrační modální okno s formulářem  
   (včetně výběru data/času a checkboxu souhlasu se zpracováním osobních údajů)
 
+## Snímky z projektu
+
+| Úvodní stránka | Registrace (modal) |
+|---|---|
+| ![Úvodní stránka](image1) | ![Registrace](image2) |
+
+| Služby | Kontakt / mapa + ordinační hodiny |
+|---|---|
+| ![Služby](image3) | ![Kontakt a ordinační hodiny](image4) |
+
+> Pozn.: Pokud budou obrázky v repozitáři uložené např. do `docs/screenshots/`, stačí v odkazech nahradit `image1`…`image4` za skutečné cesty (např. `docs/screenshots/home.png`).
+
 ## Autoři
 
 © 2025 Němec N., Cuzor V., Procházka P., Legutko P.  
@@ -108,6 +120,18 @@ Recommended: use a modern browser (Chrome/Edge/Firefox).
   - **Opening hours** (tables)
 - **Registration**: the “Register” button opens a modal registration form  
   (including date/time selection and a required personal data processing consent checkbox)
+
+## Screenshots
+
+| Landing page | Registration (modal) |
+|---|---|
+| ![Landing page](image1) | ![Registration](image2) |
+
+| Services | Contact / map + opening hours |
+|---|---|
+| ![Services](image3) | ![Contact and opening hours](image4) |
+
+> Note: If you store images in the repository e.g. in `docs/screenshots/`, replace `image1`…`image4` with real paths (e.g. `docs/screenshots/home.png`).
 
 ## Authors
 
