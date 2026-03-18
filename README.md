@@ -48,16 +48,6 @@ Doporučeno: prohlížet v moderním prohlížeči (Chrome/Edge/Firefox).
 - **Registrace**: tlačítko „Registrovat se“ otevírá registrační modální okno s formulářem  
   (včetně výběru data/času a checkboxu souhlasu se zpracováním osobních údajů)
 
-## Snímky z projektu
-
-| Úvodní stránka | Registrace (modal) |
-|---|---|
-| ![Úvodní stránka](image1) | ![Registrace](image2) |
-
-| Služby | Kontakt / mapa + ordinační hodiny |
-|---|---|
-| ![Služby](image3) | ![Kontakt a ordinační hodiny](image4) |
-
 ## Autoři
 
 © 2025 Němec N., Cuzor V., Procházka P., Legutko P.  
@@ -119,16 +109,6 @@ Recommended: use a modern browser (Chrome/Edge/Firefox).
 - **Registration**: the “Register” button opens a modal registration form  
   (including date/time selection and a required personal data processing consent checkbox)
 
-## Screenshots
-
-| Landing page | Registration (modal) |
-|---|---|
-| ![Landing page](image1) | ![Registration](image2) |
-
-| Services | Contact / map + opening hours |
-|---|---|
-| ![Services](image3) | ![Contact and opening hours](image4) |
-
 ## Authors
 
 © 2025 Němec N., Cuzor V., Procházka P., Legutko P.  
@@ -137,3 +117,23 @@ Student project (CZU FEM) for the Web Design course.
 ## Note
 
 This project is intended for educational purposes only.
+
+---
+
+## Screens
+
+Úvodní stránka
+
+![Úvodní stránka](image1)
+
+Registrace (modal)
+
+![Registrace](image2)
+
+Služby
+
+![Služby](image3)
+
+ Kontakt / mapa + ordinační hodiny
+
+![Kontakt a ordinační hodiny](image4)
